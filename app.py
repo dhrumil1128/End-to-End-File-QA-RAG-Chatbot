@@ -87,7 +87,9 @@ def configure_retriever(uploaded_files):
 
     # Create document embeddings and Store in Vector DB
     # This line will now definitely find GOOGLE_API_KEY if the loading logic above was successful
-    embeddings_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001") # Corrected
+    embeddings_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001",
+                                                   task_type="RETRIEVAL_DOCUMENT"
+                                                   ) # Corrected
     vectordb = Chroma.from_documents(doc_chunks, embeddings_model)
     
 
