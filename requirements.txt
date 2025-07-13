@@ -1,9 +1,9 @@
-langchain==0.1.12
-langchain-openai==0.0.8
-langchain-community==0.0.29
-streamlit==1.32.2
-PyMuPDF==1.24.0
-chromadb==0.4.24
-langchain-google-genai==1.0.4
+langchain==0.2.11
+langchain-community==0.2.9
+streamlit==1.36.0
+PyMuPDF==1.24.0 # Keeping this specific version as it was stable for you
+chromadb==0.5.5
+langchain-google-genai==1.0.4 # Keeping this specific version as it was stable for you
 pandas==2.3.1
 pyyaml==6.0.2
+# langchain-openai==0.2.6 # Uncomment this line ONLY if your app explicitly uses OpenAI components
