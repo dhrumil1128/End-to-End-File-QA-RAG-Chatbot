@@ -1,26 +1,9 @@
-# Install core LangChain library
-!pip install langchain==0.1.12
-
-# Install LangChain integration for OpenAI models (optional if only using Gemini)
-# Keep this if your project might have components that still rely on it,
-# otherwise, you can remove it to keep your environment leaner.
-!pip install langchain-openai==0.0.8
-
-# Install LangChain Community integrations (document loaders, vector stores, etc.)
-!pip install langchain-community==0.0.29
-
-# Install Streamlit for building the web application UI
-!pip install streamlit==1.32.2
-
-# Install PyMuPDF for loading and processing PDF documents
-!pip install PyMuPDF==1.24.0
-
-# Install ChromaDB, a vector database for storing and querying text embeddings
-!pip install chromadb==0.4.24
-
-# Install pyngrok to create secure tunnels for exposing your local Streamlit app to the internet
-!pip install pyngrok==7.1.5
-
-# Install LangChain integration for Google's Generative AI (Gemini models)
-# This is crucial for using ChatGoogleGenerativeAI and GoogleGenerativeAIEmbeddings
-!pip install langchain-google-genai
+angchain==0.1.12
+langchain-community==0.0.29
+streamlit==1.32.2
+PyMuPDF==1.24.0
+chromadb==0.4.24
+langchain-google-genai # You can add a specific version here if you know it, e.g., ==0.0.1
+pandas
+pyyaml
+# langchain-openai==0.0.8 # Uncomment this line ONLY if your app explicitly uses OpenAI components
