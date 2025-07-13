@@ -178,7 +178,6 @@ Contributions are welcome! If you have suggestions for improvements, bug reports
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgements
 
-This project was developed as part of the **End-to-End RAG Application Development with LangChain and Streamlit** course by Analytics Vidhya.
-* **Course Link:** [https://courses.analyticsvidhya.com/courses/take/end-to-end-app-rag-application-development-with-langchain-and-streamlit/lessons/61962790-end-to-end-rag-application-development](https://courses.analyticsvidhya.com/courses/take/end-to-end-app-rag-application-development-with-langchain-and-streamlit/lessons/61962790-end-to-end-rag-application-development)
+
+
