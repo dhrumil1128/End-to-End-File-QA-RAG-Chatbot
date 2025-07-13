@@ -148,26 +148,6 @@ This application is ideal for deployment on cloud platforms like Render for a pe
         ```
         web: streamlit run app.py --server.port $PORT --server.enableCORS false --server.enableXsrfProtection false
         ```
-
-3.  **Deploy to Render:**
-    * Go to [Render.com](https://render.com/) and sign up or log in.
-    * Click "New" -> "Web Service".
-    * Connect your GitHub account and select your project repository.
-    * Configure the service settings:
-        * **Name:** Choose a unique name for your web service.
-        * **Region:** Select a region geographically close to your target users.
-        * **Branch:** `main` or your primary development branch.
-        * **Root Directory:** Leave empty (if `app.py` is directly in your repository's root).
-        * **Runtime:** `Python 3` (or a specific version like `Python 3.11`).
-        * **Build Command:** `pip install -r requirements.txt`
-        * **Start Command:** `streamlit run app.py --server.port $PORT --server.enableCORS false --server.enableXsrfProtection false` (You can also leave this field empty if you created a `Procfile` as Render will automatically detect it).
-        * **Environment Variables:**
-            * Go to the "Advanced" section and click "Add Environment Variable".
-            * **Key:** `GOOGLE_API_KEY`
-            * **Value:** Paste your actual Google Gemini API key here.
-            * Ensure you mark this variable as "Secret" if Render provides that option, for enhanced security.
-    * Click "Create Web Service" to initiate the deployment. Render will then pull your code, install dependencies, and build/deploy your application.
-
 ---
 
 ## 🤝 Contributing
