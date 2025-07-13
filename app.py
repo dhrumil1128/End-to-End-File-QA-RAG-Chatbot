@@ -1,4 +1,4 @@
-%%writefile app.py
+
 # app.py
 
 # Import the core LangChain library for building LLM applications
