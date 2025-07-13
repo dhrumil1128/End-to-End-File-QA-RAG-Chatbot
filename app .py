@@ -1,4 +1,3 @@
-# app.py
 
 # Import the core LangChain library for building LLM applications
 from langchain_core.prompts import ChatPromptTemplate
