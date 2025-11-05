@@ -76,10 +76,10 @@ def configure_retriever(uploaded_files):
     # Read documents
     docs = []
     temp_dir = tempfile.TemporaryDirectory()
-    for file in uploaded_files:
-        temp_filepath = os.path.join(temp_dir.name, file.name)
+    for file_name, file_value in uploaded_file_data:
+        temp_filepath = os.path.join(temp_dir.name, file_name)
         with open(temp_filepath, "wb") as f:
-            f.write(file.getvalue())
+            f.write(file_value)
         loader = PyMuPDFLoader(temp_filepath)
         docs.extend(loader.load())
 
@@ -118,8 +118,13 @@ if not uploaded_files:
     st.info("Please upload PDF documents to continue.")
     st.stop()
 
+# NEW LINE: Prepare a stable, hashable list of file content to use as the cache key.
+uploaded_file_data = [(file.name, file.getvalue()) for file in uploaded_files]
+
+# MODIFIED: Call the function using the stable list. 
 # Create retriever object based on uploaded PDFs
-retriever = configure_retriever(uploaded_files)
+retriever = configure_retriever(uploaded_file_data)
+
 
 # Load a connection to Gemini LLM
 gemini = ChatGoogleGenerativeAI(model='gemini-1.5-flash',
