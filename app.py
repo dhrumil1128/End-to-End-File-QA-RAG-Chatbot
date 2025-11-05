@@ -1,13 +1,10 @@
-
-# app.py
-
 # Import the core LangChain library for building LLM applications
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.callbacks.base import BaseCallbackHandler
 
 # Import components for integrating with Google's Generative AI (Gemini) models
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 # Import LangChain Community integrations
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
@@ -28,12 +25,8 @@ import yaml # Make sure this import is present
 # --- Set page config at the very top ---
 st.set_page_config(page_title="File QA Chatbot", page_icon="🤖")
 
-
 # Define the path to your API key file
 API_KEY_FILE = "gemini_api_key.yml" # Make sure this matches the file name you upload
-
-
-
 
 # Try to get the key from environment variables (Colab Secrets) first
 env_api_key = os.getenv("GOOGLE_API_KEY")
@@ -87,10 +80,11 @@ def configure_retriever(uploaded_files):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)
     doc_chunks = text_splitter.split_documents(docs)
 
+    
     # Create document embeddings and Store in Vector DB
-    # This line will now definitely find GOOGLE_API_KEY if the loading logic above was successful
-    embeddings_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001") # Corrected
-    vectordb = Chroma.from_documents(doc_chunks, embeddings_model)
+    model_name = "sentence-transformers/all-MiniLM-L6-v2"       # we use the Opensource Embbending Model 
+    embeddings_model = HuggingFaceEmbeddings(model_name=model_name)
+    vectordb = Chroma.from_documents(doc_chunks, embeddings_model)        # this is call Chromadb data base .
     
 
     # Define retriever object
