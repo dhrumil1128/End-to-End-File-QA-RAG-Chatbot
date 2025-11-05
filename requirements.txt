@@ -7,3 +7,4 @@ langchain-google-genai==1.0.4 # Keeping this specific version as it was stable f
 pandas==2.3.1
 pyyaml==6.0.2
 # langchain-openai==0.2.6 # Uncomment this line ONLY if your app explicitly uses OpenAI components
+sentence-transformers
