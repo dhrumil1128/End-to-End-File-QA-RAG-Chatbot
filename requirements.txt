@@ -1,10 +1,9 @@
 langchain==0.2.11
 langchain-community==0.2.9
 streamlit==1.36.0
-PyMuPDF==1.24.0 # Keeping this specific version as it was stable for you
+pypdf  # <-- REPLACED PyMuPDF to avoid compilation issues on Render
 chromadb==0.5.5
-langchain-google-genai==1.0.4 # Keeping this specific version as it was stable for you
+langchain-google-genai==1.0.4
 pandas==2.3.1
 pyyaml==6.0.2
-# langchain-openai==0.2.6 # Uncomment this line ONLY if your app explicitly uses OpenAI components
 sentence-transformers
