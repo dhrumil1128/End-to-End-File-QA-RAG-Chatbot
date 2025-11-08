@@ -244,7 +244,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 
 # Import LangChain Community integrations
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from langchain_community.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import Chroma
 
 # Import LangChain text splitting utility
@@ -314,7 +314,7 @@ def configure_retriever(uploaded_file_data):
                 f.write(file_value)
             
             # Load the document from the temporary file path
-            loader = PyMuPDFLoader(temp_filepath)
+           loader = PyPDFLoader(temp_filepath)
             docs.extend(loader.load())
 
     # Split into documents chunks
