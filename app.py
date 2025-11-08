@@ -314,7 +314,7 @@ def configure_retriever(uploaded_file_data):
                 f.write(file_value)
             
             # Load the document from the temporary file path
-           loader = PyPDFLoader(temp_filepath)
+            loader = PyPDFLoader(temp_filepath)
             docs.extend(loader.load())
 
     # Split into documents chunks
