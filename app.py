@@ -121,7 +121,7 @@ retriever = configure_retriever(uploaded_file_data)
 
 
 # Load a connection to Gemini LLM
-gemini = ChatGoogleGenerativeAI(model='gemini-1.5-flash',
+gemini = ChatGoogleGenerativeAI(model='gemini-2.5-flash',
                                  temperature=0.2,
                                  disable_streaming=False) # Corrected
 
